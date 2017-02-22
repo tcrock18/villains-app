@@ -4,15 +4,25 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {RouterModule} from "@angular/router";
+import { VillainsListPageComponent } from './pages/villains/villains-list-page/villains-list-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VillainsListPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { path: 'villains', component: VillainsListPageComponent},
+      { path: '',
+        redirectTo: '/villains',
+        pathMatch: 'full'
+      },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
