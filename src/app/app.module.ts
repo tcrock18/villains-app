@@ -11,6 +11,7 @@ import { VillainsEditVillainPageComponent } from './pages/villains/villains-edit
 import { VillainsDeleteVillainPageComponent } from './pages/villains/villains-delete-villain-page/villains-delete-villain-page.component';
 import { VillainsDetailPageComponent } from './pages/villains/villains-detail-page/villains-detail-page.component';
 import { PageNotFoundComponent } from './pages/villains/page-not-found/page-not-found.component';
+import {VillainService} from "./villain.service";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { PageNotFoundComponent } from './pages/villains/page-not-found/page-not-
       { path: '**', component: PageNotFoundComponent }
     ])
   ],
-  providers: [],
+  providers: [VillainService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {VillainService} from "../../../villain.service";
 
 @Component({
   selector: 'app-villains-list-page',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VillainsListPageComponent implements OnInit {
 
-  constructor() { }
+  villains: any;
+
+  constructor(protected villainService: VillainService) { }
 
   ngOnInit() {
+    this.villains = this.villainService.getVillains();
   }
 
 }
