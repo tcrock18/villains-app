@@ -1,22 +1,26 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {Http, Response} from "@angular/http";
+import {Observable} from "rxjs";
+import 'rxjs/add/operator/map';
+
+const ENDPOINT = 'https://villains-api.herokuapp.com/v1/villains';
 
 @Injectable()
 export class VillainService {
 
-  // constructor() { }
 
-  getVillains() {
+  constructor(private http: Http) {
+  }
 
-    return [
-      {id: 1, name: 'Magneto'},
-      {id: 2, name: 'Lawyers'},
-      {id: 3, name: `Ex's`}
-    ];
-      // const villains = [
-    // {id: 1, name: 'Magneto'},
-    // {id: 2, name: 'Lawyers'},
-    // {id: 3, name: `Ex's`}
+  getVillains(): Observable<any> {
+
+    console.log(this.http);
+    return this.http.get(ENDPOINT)
+      .map((response) => response.json());
 
   }
 
+  getVillain(id) {
+    return {}
+  }
 }
