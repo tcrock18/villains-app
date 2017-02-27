@@ -12,4 +12,8 @@ export class VillainsNewPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  onValid(villain) {
+    console.log(villain);
+  }
+
 }

@@ -12,6 +12,7 @@ import { VillainsDeleteVillainPageComponent } from './pages/villains/villains-de
 import { VillainsDetailPageComponent } from './pages/villains/villains-detail-page/villains-detail-page.component';
 import { PageNotFoundComponent } from './pages/villains/page-not-found/page-not-found.component';
 import {VillainService} from "./villain.service";
+import { VillainFormComponent } from './villain-form/villain-form/villain-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {VillainService} from "./villain.service";
     VillainsDeleteVillainPageComponent,
     VillainsDetailPageComponent,
     PageNotFoundComponent,
+    VillainFormComponent,
   ],
   imports: [
     BrowserModule,

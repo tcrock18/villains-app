@@ -1,0 +1,29 @@
+<form (ngSubmit)="formSubmitted(villain)" #form="ngForm">
+
+  <fieldset>
+    <label for="name">Name</label>
+    <input type="text" [(ngModel)]="villain.name" id="name" name="name" required #name="ngModel">
+    <span [hidden]="name.valid || name.pristine">Name is required</span>
+  </fieldset>
+
+  <fieldset>
+    <label for="kind">Kind</label>
+    <select type="text" [(ngModel)]="villain.kind" id="kind" name="kind" required #kind="ngModel">
+      <option *ngFor="let opt of kindOptions" [value]="opt">{{ opt }}</option>
+    </select>
+    <span [hidden]="kind.valid || kind.pristine">Kind is required</span>
+  </fieldset>
+
+  <fieldset>
+    <label for="gender">Gender</label>
+    <select type="text" [(ngModel)]="villain.gender" id="gender" name="gender" required #gender="ngModel">
+      <option *ngFor="let gender of genderOptions" [value]="gender">{{ gender }}</option>
+    </select>
+    <span [hidden]="gender.valid || gender.pristine">Gender is required</span>
+  </fieldset>
+
+  <section>
+    <button type="submit" [disabled]="!form.valid">Save</button>
+  </section>
+
+</form>
