@@ -13,6 +13,8 @@ export class VillainFormComponent {
 
   kindOptions = ['Mutant', 'Human', 'Other'];
   genderOptions = ['Male', 'Female', 'Tranny'];
+  universeOptions = ['Marvel', 'DC', 'Other'];
+  ratingOptions = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 
 
   constructor() {
@@ -25,3 +27,23 @@ export class VillainFormComponent {
     this.valid.emit(villain);
   }
 }
+
+
+// {
+//   "bio": "",
+//   "gender": "male",
+//   "identity": {
+//     "name": {
+//       "first": "Eric",
+//       "middle": "",
+//       "last": "Lehnsherr"
+//     },
+//     "age": ""
+//   },
+//   "isActive": true,
+//   "kind": "Mutant",
+//   "name": "Magneto",
+//   "nicknames": [],
+//   "rating": "",
+//   "universe": "Marvel"
+// }

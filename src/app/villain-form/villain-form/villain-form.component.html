@@ -22,6 +22,22 @@
     <span [hidden]="gender.valid || gender.pristine">Gender is required</span>
   </fieldset>
 
+  <fieldset>
+    <label for="universe">Universe</label>
+    <select type="text" [(ngModel)]="villain.universe" id="universe" name="universe" required #universe="ngModel">
+      <option *ngFor="let universe of universeOptions" [value]="universe">{{ universe }}</option>
+    </select>
+    <span [hidden]="universe.valid || universe.pristine">Universe is required</span>
+  </fieldset>
+
+  <fieldset>
+    <label for="rating">Rating</label>
+    <select type="text" [(ngModel)]="villain.rating" id="rating" name="rating" required #rating="ngModel">
+      <option *ngFor="let rating of ratingOptions" [value]="rating">{{ rating }}</option>
+    </select>
+    <span [hidden]="rating.valid || rating.pristine">Rating is required</span>
+  </fieldset>
+
   <section>
     <button type="submit" [disabled]="!form.valid">Save</button>
   </section>
